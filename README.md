@@ -6,7 +6,7 @@ plus a sandboxed **virtual computer** that stands in for the Windows desktop
 OneShot talks to ("the document outside the game", the wallpaper, message
 boxes, closing the game).
 
-> Status: **playable vertical slice** — boots on an emulated Dreamcast (Flycast),
+> Status: Boots on an emulated Dreamcast (Flycast),
 > renders the real maps/sprites/pictures, runs the original event scripts, and the
 > original "document outside the game" safe puzzle is solvable end-to-end through
 > the virtual computer. Tested on real hardware. See
