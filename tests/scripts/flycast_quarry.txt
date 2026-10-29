@@ -1,0 +1,67 @@
+# Real emulator run: Mining area (Map 21 quarry) reached via the Debug Menu, diagnostics on.
+6 key x
+15 key x
+37 key x
+39 key x
+41 key x
+43 key x
+45 key x
+52.0 key Return
+54.0 key Down
+54.5 key Down
+55.0 key Down
+55.5 key Down
+56.0 key x
+57.2 key s
+58.0 key c
+59.0 key Up
+59.6 key Up
+60.2 key Down
+60.8 key Down
+61.4 keys f+v 1.0
+63.4 key Down
+63.9 key Down
+64.4 key Down
+64.9 key x
+66.4 key Down
+66.8 key Down
+67.1 key Down
+67.4 key Down
+67.8 key Down
+68.1 key Down
+68.5 key Down
+68.8 key Down
+69.2 key Down
+69.5 key Down
+69.9 key Down
+70.2 key Down
+70.6 key Down
+70.9 key Down
+71.3 key Down
+71.6 key Down
+72.0 key Down
+72.3 key Down
+72.7 key Down
+73.0 key Down
+73.4 shot fq00_room_list
+73.9 key x
+77.4 shot fq01_arrived
+77.9 key Down 2.0
+80.1 shot fq02_down
+80.5 key Left 2.5
+83.2 shot fq03_left
+83.6 key Down 2.0
+85.8 shot fq04_down
+86.2 key Right 3.0
+89.4 shot fq05_right
+89.8 key Up 2.0
+92.0 shot fq06_up
+92.4 key Right 3.0
+95.6 shot fq07_right
+96.0 key Down 3.0
+99.2 shot fq08_down
+99.6 key Left 3.0
+102.8 shot fq09_left
+103.2 key Up 3.0
+106.4 shot fq10_up
+106.8 end

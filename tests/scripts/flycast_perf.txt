@@ -1,0 +1,23 @@
+# Emulator: enable diagnostics (Settings app, X) and measure in the opening room
+7 key x
+15 key x
+40 key x
+42 key x
+44 key x
+46 key x
+48 key x
+52 key Return
+54 key Down
+55 key Down
+56 key Down
+57 key Down
+58 key x
+60 key s
+61 shot p01_settings
+62 key c
+63 key Return
+66 key Right 0.5
+68 shot p02_room_diag
+70 key Left 0.4
+72 shot p03_room_diag
+74 end

@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Host (Linux) build of the portable core: unit tests + headless runner.
+CC ?= cc
+CFLAGS ?= -std=c11 -O1 -g -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fsanitize=address,undefined -D_POSIX_C_SOURCE=200809L
+LDFLAGS ?= -fsanitize=address,undefined
+OUT = build/host
+
+CORE = src/util.c src/vfs/vfs.c src/save/save.c src/save/persist.c src/resources/gamedata.c \
+       src/renderer/gfx.c src/game/game.c src/game/map.c src/game/transition.c src/game/banim.c src/events/interp.c \
+       src/events/bridge.c src/dialogue/message.c src/audio/audio.c src/ui/ui.c src/desktop/desktop.c src/desktop/debugmenu.c
+
+all: $(OUT)/host_runner $(OUT)/unit_tests
+
+$(OUT)/host_runner: $(CORE) src/main.c src/platform/platform_host.c tests/host_runner.c $(wildcard src/*/*.h src/*.h)
+	@mkdir -p $(OUT)
+	$(CC) $(CFLAGS) -DOS_NO_MAIN $(CORE) src/main.c src/platform/platform_host.c tests/host_runner.c -o $@ $(LDFLAGS)
+
+$(OUT)/door_sweep: $(CORE) src/main.c src/platform/platform_host.c tests/door_sweep.c $(wildcard src/*/*.h src/*.h)
+	@mkdir -p $(OUT)
+	$(CC) $(CFLAGS) -DOS_NO_MAIN $(CORE) src/main.c src/platform/platform_host.c tests/door_sweep.c -o $@ $(LDFLAGS)
+
+$(OUT)/unit_tests: $(CORE) src/main.c src/platform/platform_host.c tests/unit_tests.c $(wildcard src/*/*.h src/*.h)
+	@mkdir -p $(OUT)
+	$(CC) $(CFLAGS) -DOS_NO_MAIN $(CORE) src/main.c src/platform/platform_host.c tests/unit_tests.c -o $@ $(LDFLAGS)
+
+clean:
+	rm -rf $(OUT)
+
+.PHONY: all clean

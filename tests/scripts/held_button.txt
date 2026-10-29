@@ -1,0 +1,17 @@
+# STRESS: holding A must not skip dialogue.  Messages only react to a NEW press.
+0 -
+30 A
+32 -
+160 A
+162 -
+# hold A from before "H-hello?" appears until long after
+400 A
+1000 print
+1001 expect-busy 1
+1002 shot hb_01_still_waiting
+# release and press once: exactly one message advances
+1010 -
+1020 A
+1022 -
+1060 expect-busy 1
+1061 shot hb_02_one_step

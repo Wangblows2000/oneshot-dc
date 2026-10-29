@@ -1,0 +1,387 @@
+[
+ {
+  "code": 10,
+  "name": "END",
+  "uses": 1426,
+  "status": "implemented",
+  "maps": 56
+ },
+ {
+  "code": 20110,
+  "name": "ShowMessage_2",
+  "uses": 1081,
+  "status": "implemented",
+  "maps": 47
+ },
+ {
+  "code": 10110,
+  "name": "ShowMessage",
+  "uses": 985,
+  "status": "implemented",
+  "maps": 56
+ },
+ {
+  "code": 12010,
+  "name": "ConditionalBranch",
+  "uses": 970,
+  "status": "implemented",
+  "maps": 56
+ },
+ {
+  "code": 22011,
+  "name": "EndBranch",
+  "uses": 970,
+  "status": "implemented",
+  "maps": 56
+ },
+ {
+  "code": 12330,
+  "name": "CallEvent",
+  "uses": 830,
+  "status": "implemented",
+  "maps": 68
+ },
+ {
+  "code": 10130,
+  "name": "ChangeFaceGraphic",
+  "uses": 659,
+  "status": "implemented",
+  "maps": 52
+ },
+ {
+  "code": 10210,
+  "name": "ControlSwitches",
+  "uses": 540,
+  "status": "implemented",
+  "maps": 64
+ },
+ {
+  "code": 10220,
+  "name": "ControlVars",
+  "uses": 445,
+  "status": "implemented",
+  "maps": 52
+ },
+ {
+  "code": 22010,
+  "name": "ElseBranch",
+  "uses": 388,
+  "status": "implemented",
+  "maps": 42
+ },
+ {
+  "code": 11330,
+  "name": "MoveEvent",
+  "uses": 283,
+  "status": "implemented",
+  "maps": 36
+ },
+ {
+  "code": 10810,
+  "name": "Teleport",
+  "uses": 208,
+  "status": "implemented",
+  "maps": 56
+ },
+ {
+  "code": 11410,
+  "name": "Wait",
+  "uses": 203,
+  "status": "implemented",
+  "maps": 45
+ },
+ {
+  "code": 11340,
+  "name": "ProceedWithMovement",
+  "uses": 159,
+  "status": "implemented",
+  "maps": 32
+ },
+ {
+  "code": 11110,
+  "name": "ShowPicture",
+  "uses": 140,
+  "status": "implemented",
+  "maps": 20
+ },
+ {
+  "code": 11550,
+  "name": "PlaySound",
+  "uses": 140,
+  "status": "implemented",
+  "maps": 38
+ },
+ {
+  "code": 11120,
+  "name": "MovePicture",
+  "uses": 121,
+  "status": "implemented",
+  "maps": 21
+ },
+ {
+  "code": 11510,
+  "name": "PlayBGM",
+  "uses": 118,
+  "status": "implemented",
+  "maps": 48
+ },
+ {
+  "code": 10320,
+  "name": "ChangeItems",
+  "uses": 93,
+  "status": "implemented",
+  "maps": 29
+ },
+ {
+  "code": 11130,
+  "name": "ErasePicture",
+  "uses": 84,
+  "status": "implemented",
+  "maps": 20
+ },
+ {
+  "code": 10120,
+  "name": "MessageOptions",
+  "uses": 68,
+  "status": "implemented",
+  "maps": 16
+ },
+ {
+  "code": 20140,
+  "name": "ShowChoiceOption",
+  "uses": 53,
+  "status": "implemented",
+  "maps": 11
+ },
+ {
+  "code": 12320,
+  "name": "EraseEvent",
+  "uses": 47,
+  "status": "implemented",
+  "maps": 44
+ },
+ {
+  "code": 11350,
+  "name": "HaltAllMovement",
+  "uses": 43,
+  "status": "implemented",
+  "maps": 21
+ },
+ {
+  "code": 10670,
+  "name": "ChangeSystemSFX",
+  "uses": 33,
+  "status": "implemented",
+  "maps": 15
+ },
+ {
+  "code": 11210,
+  "name": "ShowBattleAnimation",
+  "uses": 30,
+  "status": "approximated",
+  "maps": 13
+ },
+ {
+  "code": 10140,
+  "name": "ShowChoice",
+  "uses": 29,
+  "status": "implemented",
+  "maps": 11
+ },
+ {
+  "code": 20141,
+  "name": "ShowChoiceEnd",
+  "uses": 29,
+  "status": "implemented",
+  "maps": 11
+ },
+ {
+  "code": 10860,
+  "name": "ChangeEventLocation",
+  "uses": 28,
+  "status": "implemented",
+  "maps": 1
+ },
+ {
+  "code": 11520,
+  "name": "FadeOutBGM",
+  "uses": 27,
+  "status": "implemented",
+  "maps": 18
+ },
+ {
+  "code": 10630,
+  "name": "ChangeSpriteAssociation",
+  "uses": 24,
+  "status": "implemented",
+  "maps": 15
+ },
+ {
+  "code": 12220,
+  "name": "BreakLoop",
+  "uses": 21,
+  "status": "implemented",
+  "maps": 6
+ },
+ {
+  "code": 10830,
+  "name": "RecallToLocation",
+  "uses": 19,
+  "status": "implemented",
+  "maps": 11
+ },
+ {
+  "code": 11030,
+  "name": "TintScreen",
+  "uses": 18,
+  "status": "implemented",
+  "maps": 13
+ },
+ {
+  "code": 10820,
+  "name": "MemorizeLocation",
+  "uses": 18,
+  "status": "implemented",
+  "maps": 17
+ },
+ {
+  "code": 12210,
+  "name": "Loop",
+  "uses": 15,
+  "status": "implemented",
+  "maps": 8
+ },
+ {
+  "code": 22210,
+  "name": "EndLoop",
+  "uses": 15,
+  "status": "implemented",
+  "maps": 8
+ },
+ {
+  "code": 10450,
+  "name": "ChangeEquipment",
+  "uses": 12,
+  "status": "implemented",
+  "maps": 8
+ },
+ {
+  "code": 11010,
+  "name": "EraseScreen",
+  "uses": 11,
+  "status": "implemented",
+  "maps": 8
+ },
+ {
+  "code": 11610,
+  "name": "KeyInputProc",
+  "uses": 10,
+  "status": "implemented",
+  "maps": 4
+ },
+ {
+  "code": 11020,
+  "name": "ShowScreen",
+  "uses": 9,
+  "status": "implemented",
+  "maps": 7
+ },
+ {
+  "code": 10680,
+  "name": "ChangeSystemGraphics",
+  "uses": 8,
+  "status": "implemented",
+  "maps": 7
+ },
+ {
+  "code": 10440,
+  "name": "ChangeSkills",
+  "uses": 8,
+  "status": "implemented",
+  "maps": 7
+ },
+ {
+  "code": 12120,
+  "name": "JumpToLabel",
+  "uses": 6,
+  "status": "implemented",
+  "maps": 1
+ },
+ {
+  "code": 10330,
+  "name": "ChangePartyMembers",
+  "uses": 4,
+  "status": "implemented",
+  "maps": 4
+ },
+ {
+  "code": 12410,
+  "name": "Comment",
+  "uses": 4,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 11060,
+  "name": "PanScreen",
+  "uses": 4,
+  "status": "approximated",
+  "maps": 2
+ },
+ {
+  "code": 12110,
+  "name": "Label",
+  "uses": 3,
+  "status": "implemented",
+  "maps": 1
+ },
+ {
+  "code": 11720,
+  "name": "ChangePBG",
+  "uses": 3,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 10740,
+  "name": "EnterHeroName",
+  "uses": 2,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 11960,
+  "name": "ChangeMainMenuAccess",
+  "uses": 2,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 10150,
+  "name": "InputNumber",
+  "uses": 2,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 11040,
+  "name": "FlashScreen",
+  "uses": 2,
+  "status": "implemented",
+  "maps": 2
+ },
+ {
+  "code": 11050,
+  "name": "ShakeScreen",
+  "uses": 2,
+  "status": "implemented",
+  "maps": 1
+ },
+ {
+  "code": 12510,
+  "name": "ReturntoTitleScreen",
+  "uses": 1,
+  "status": "implemented",
+  "maps": 1
+ }
+]

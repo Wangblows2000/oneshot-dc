@@ -1,0 +1,74 @@
+# Real emulator run: pick up the TV remote, select it in the Items menu, use it on the window.
+# Route verified on the host build: wake at (16,16) -> Down x3, Right x6 -> face the carpet bump.
+6 key x
+15 key x
+37 key x
+39 key x
+41 key x
+43 key x
+45 key x
+50 shot fi01_room
+51.0 key Down 0.08
+51.8 key Down 0.08
+52.6 key Down 0.08
+53.4 key Right 0.08
+54.2 key Right 0.08
+55.0 key Right 0.08
+55.8 key Right 0.08
+56.6 key Right 0.08
+57.4 key Right 0.08
+58.2 key Up 0.08
+59.5 key x
+61.0 shot fi02_remote_found
+61.5 key x
+63.0 key x
+64.5 key x
+66.0 key x
+67.5 key c
+69.0 shot fi03_menu
+69.5 key x
+71.0 shot fi04_items
+71.5 key x
+73.0 shot fi05_holding_remote
+73.5 key Right 0.08
+74.3 key Right 0.08
+75.1 key Up 0.08
+75.9 key Up 0.08
+76.7 key Up 0.08
+77.5 key Up 0.08
+78.8 key x
+79.3 shot fi06_window_00
+79.7 shot fi06_window_01
+80.1 shot fi06_window_02
+80.5 shot fi06_window_03
+80.9 shot fi06_window_04
+81.3 shot fi06_window_05
+81.7 shot fi06_window_06
+81.8 key x
+82.1 shot fi06_window_07
+82.5 shot fi06_window_08
+82.9 shot fi06_window_09
+83.3 shot fi06_window_10
+83.7 shot fi06_window_11
+84.1 shot fi06_window_12
+84.3 key x
+84.5 shot fi06_window_13
+84.9 shot fi06_window_14
+85.3 shot fi06_window_15
+85.7 shot fi06_window_16
+86.1 shot fi06_window_17
+86.5 shot fi06_window_18
+86.8 key x
+86.9 shot fi06_window_19
+87.3 shot fi06_window_20
+87.7 shot fi06_window_21
+88.1 shot fi06_window_22
+88.5 shot fi06_window_23
+88.9 shot fi06_window_24
+89.3 key x
+89.3 shot fi06_window_25
+89.7 shot fi06_window_26
+90.1 shot fi06_window_27
+90.5 shot fi06_window_28
+90.9 shot fi06_window_29
+92.3 end

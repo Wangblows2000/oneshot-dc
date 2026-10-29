@@ -1,0 +1,25 @@
+# Boot -> title -> new game -> photosensitivity question -> wake-up in Map 2 -> "Hello?"
+0 -
+20 shot 01_title
+30 A
+32 -
+160 A
+162 -
+600 print
+640 shot 02_hello
+650 A
+652 -
+700 A
+702 -
+760 shot 03_deja
+780 A
+782 -
+900 print
+910 RIGHT
+960 -
+970 print
+980 shot 04_walk
+990 DOWN
+1020 -
+1030 print
+1040 expect-sw 1 1

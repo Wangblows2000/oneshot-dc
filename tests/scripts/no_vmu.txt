@@ -1,0 +1,50 @@
+# STRESS: no VMU inserted.  Boot must work, warn, keep progress in RAM, never claim a save.
+0 -
+20 shot nv_01_warning
+30 A
+32 -
+60 A
+62 -
+190 A
+192 -
+230 advance 3000
+240 RIGHT
+248 -
+260 common 26
+262 advance 120
+280 shot nv_02_save_notice
+290 A
+292 -
+300 START
+302 -
+306 DOWN
+308 -
+312 DOWN
+314 -
+318 DOWN
+320 -
+330 A
+332 -
+340 shot nv_03_card_app
+350 B
+352 -
+356 DOWN
+358 -
+362 DOWN
+364 -
+368 DOWN
+370 -
+376 A
+378 -
+382 A
+384 -
+430 A
+432 -
+560 advance 400
+600 A
+602 -
+604 START
+606 -
+610 advance 3000
+700 expect-map 2
+701 print

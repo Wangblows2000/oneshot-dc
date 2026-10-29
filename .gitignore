@@ -1,0 +1,9 @@
+build/
+assets/source_readonly/
+assets/converted/
+tools/bin/
+reference/mkxp-oneshot/src/
+__pycache__/
+*.o
+*.elf
+*.cdi

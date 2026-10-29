@@ -1,0 +1,458 @@
+[
+ {
+  "func": 0,
+  "common_event": 1,
+  "name": "func_GuessName",
+  "original_purpose": "Guess the player's real name from the host computer (used by the Prophet).",
+  "dreamcast_replacement": "Copies the virtual computer's account name (Settings app, default 'Player') into actor 2.",
+  "failure_behaviour": "No account name -> actor 2 keeps its current name; the Prophet still asks for a name.",
+  "status": "implemented (approximation)",
+  "call_sites": [
+   {
+    "where": "Map16 event 7 'The Prophet' page 4",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [
+   "(manual) Prophet dialogue, Map 16 event 7"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 1,
+  "common_event": 2,
+  "name": "func_SetName",
+  "original_purpose": "Substitute the player's name for the _PlayerName_ placeholder in the next message.",
+  "dreamcast_replacement": "The message renderer always replaces the placeholder with the stored player name.",
+  "failure_behaviour": "Unknown name -> actor 2 name is used.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "Map16 event 7 'The Prophet' page 4",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map18 event 6 'rowbot' page 2",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map18 event 6 'rowbot' page 11",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map20 event 3 'safe' page 1",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map20 event 3 'safe' page 2",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map23 event 63 'can't breathe' page 1",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "... 9 more",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 15,
+  "tests": [
+   "tests/scripts/safe_puzzle.txt (placeholder substitution in safe dialogue)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 2,
+  "common_event": 3,
+  "name": "func_SetNameEntry",
+  "original_purpose": "Store the name typed in EnterHeroName as the player's name.",
+  "dreamcast_replacement": "Stores actor 2's name as the persistent player name (saved with the next commit).",
+  "failure_behaviour": "Empty name -> rejected by the on-screen keyboard (cannot confirm empty input).",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "Map16 event 7 'The Prophet' page 4",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [
+   "tests/scripts/restart_persistence.txt (name entry after reload)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 3,
+  "common_event": 4,
+  "name": "func_ShakeWindow",
+  "original_purpose": "Shake the game window on the Windows desktop.",
+  "dreamcast_replacement": "Shakes the whole screen for about one second (non-photosensitive path only, as in the data).",
+  "failure_behaviour": "None.",
+  "status": "implemented (approximation)",
+  "call_sites": [
+   {
+    "where": "Map60 event 1 'pedestal' page 1",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 4,
+  "common_event": 5,
+  "name": "func_SetWallpaper",
+  "original_purpose": "arg1=1: replace the desktop wallpaper with a clue image; arg1=0: restore it. return=1 on success.",
+  "dreamcast_replacement": "Changes the virtual desktop wallpaper (persisted).  The clue wallpaper is generated at conversion time from the solution event M28E36.",
+  "failure_behaviour": "If the clue image is missing: return=0 and a clue file is placed on the virtual Desktop instead (the data's own fallback branch).",
+  "status": "implemented (clue art is a reconstruction)",
+  "call_sites": [
+   {
+    "where": "Map33 event 1 'EV0001' page 1",
+    "arg1": 1,
+    "return_checked": true
+   },
+   {
+    "where": "Map33 event 1 'EV0001' page 3",
+    "arg1": 0,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 2,
+  "tests": [
+   "tests/scripts/restart_persistence.txt (wallpaper survives relaunch)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 5,
+  "common_event": 6,
+  "name": "func_MessageBox",
+  "original_purpose": "Show a native Windows message box; arg1 selects the text; return=1 for OK/Yes.",
+  "dreamcast_replacement": "Modal virtual system dialog; waits for the controller.  Texts are substitutes (originals are inside the obfuscated EXE).",
+  "failure_behaviour": "Unknown id -> generic OK dialog, return=1.",
+  "status": "implemented (substitute text)",
+  "call_sites": [
+   {
+    "where": "Map2 event 7 'Computer 1' page 1",
+    "arg1": 0,
+    "return_checked": false
+   },
+   {
+    "where": "Map20 event 3 'safe' page 1",
+    "arg1": 1,
+    "return_checked": true
+   },
+   {
+    "where": "Map20 event 3 'safe' page 2",
+    "arg1": 2,
+    "return_checked": true
+   },
+   {
+    "where": "Map20 event 3 'safe' page 2",
+    "arg1": 3,
+    "return_checked": true
+   },
+   {
+    "where": "Map61 event 1 'EV0001' page 1",
+    "arg1": 5,
+    "return_checked": false
+   },
+   {
+    "where": "Map62 event 5 'door close' page 2",
+    "arg1": 4,
+    "return_checked": false
+   },
+   {
+    "where": "Map62 event 5 'door close' page 2",
+    "arg1": 7,
+    "return_checked": false
+   },
+   {
+    "where": "Map63 event 1 'entrance' page 2",
+    "arg1": 6,
+    "return_checked": false
+   },
+   {
+    "where": "Map63 event 2 'entrance' page 2",
+    "arg1": 6,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 9,
+  "tests": [
+   "tests/scripts/safe_puzzle.txt (modal Yes/No dialog)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 6,
+  "common_event": 7,
+  "name": "func_LeaveWindow",
+  "original_purpose": "Move the game window off screen at the ending.",
+  "dreamcast_replacement": "Plays a window-leaving animation, then a simulated game close; the next launch boots through Map 1.",
+  "failure_behaviour": "None.",
+  "status": "implemented (approximation)",
+  "call_sites": [
+   {
+    "where": "Map61 event 1 'EV0001' page 1",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 7,
+  "common_event": 8,
+  "name": "func_Save",
+  "original_purpose": "Begin the one-slot save: snapshot switches/variables (incl. memorised location vars 21-23).",
+  "dreamcast_replacement": "Snapshots switches/variables in RAM; the write happens when the item+skill streams end.",
+  "failure_behaviour": "See WriteItem.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [
+   "tests/unit_tests.c test_persist",
+   "tests/scripts/restart_persistence.txt"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 8,
+  "common_event": 9,
+  "name": "func_WriteItem",
+  "original_purpose": "Stream item ids then note(skill) ids into the save; 0 terminates each list.",
+  "dreamcast_replacement": "Collects ids; after the second terminator commits to the VMU (two-slot, CRC-verified) and keeps a RAM copy.",
+  "failure_behaviour": "No VMU / full / write error -> progress kept in RAM for this power session and the player is told honestly.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 1,
+    "return_checked": false
+   },
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 2,
+    "return_checked": false
+   },
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 3,
+    "return_checked": false
+   },
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 4,
+    "return_checked": false
+   },
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 5,
+    "return_checked": false
+   },
+   {
+    "where": "CE26 SAVE GAME",
+    "arg1": 6,
+    "return_checked": false
+   },
+   {
+    "where": "... 37 more",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 43,
+  "tests": [
+   "tests/unit_tests.c test_persist (zero/duplicate handling)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 9,
+  "common_event": 10,
+  "name": "func_Load",
+  "original_purpose": "Load the save. return=0 none, 1 loaded, 2 loaded but the player's name is unknown.",
+  "dreamcast_replacement": "Reads the newest valid VMU slot (or the RAM copy), restores switches/variables, prepares item/note streams.",
+  "failure_behaviour": "Corrupt/unsupported save -> return=0 (new game) after an explanatory dialog; data on the card is not deleted.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "CE27 LOAD GAME",
+    "arg1": null,
+    "return_checked": true
+   }
+  ],
+  "call_site_count": 1,
+  "tests": [
+   "tests/unit_tests.c test_persist",
+   "tests/scripts/restart_persistence.txt",
+   "tests/scripts/no_vmu.txt"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 10,
+  "common_event": 11,
+  "name": "func_ReadItem",
+  "original_purpose": "Return the next streamed id (items, 0, notes, 0).",
+  "dreamcast_replacement": "Returns ids from the restored lists.",
+  "failure_behaviour": "Exhausted -> 0.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "CE27 LOAD GAME",
+    "arg1": null,
+    "return_checked": true
+   },
+   {
+    "where": "CE27 LOAD GAME",
+    "arg1": null,
+    "return_checked": true
+   }
+  ],
+  "call_site_count": 2,
+  "tests": [
+   "tests/unit_tests.c test_persist"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 11,
+  "common_event": 12,
+  "name": "func_Document",
+  "original_purpose": "Write a document containing the 6-digit safe code (var 29) into the player's Documents folder.",
+  "dreamcast_replacement": "Creates a text file in the virtual /Documents folder (persistent layer).",
+  "failure_behaviour": "VFS full -> return=0 and a diagnostic; the safe stays unsolvable until space is available (never auto-solved).",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "Map20 event 3 'safe' page 1",
+    "arg1": null,
+    "return_checked": false
+   },
+   {
+    "where": "Map20 event 3 'safe' page 2",
+    "arg1": null,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 2,
+  "tests": [
+   "tests/scripts/safe_puzzle.txt",
+   "tests/unit_tests.c test_persist (full VFS -> failure)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 12,
+  "common_event": 13,
+  "name": "func_End",
+  "original_purpose": "Record which ending was reached (arg1 3 or 4) so later launches change.",
+  "dreamcast_replacement": "Sets the persistent ENDING value (arg1-1, matching Map 1's checks) and commits immediately.",
+  "failure_behaviour": "Commit failure -> value kept in RAM; the player is warned that a power-off will forget it.",
+  "status": "implemented (mapping inferred)",
+  "call_sites": [
+   {
+    "where": "Map60 event 1 'pedestal' page 1",
+    "arg1": 4,
+    "return_checked": false
+   },
+   {
+    "where": "Map60 event 1 'pedestal' page 1",
+    "arg1": 3,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 2,
+  "tests": [
+   "tests/unit_tests.c test_persist (ending survives power cycle)"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": 13,
+  "common_event": 14,
+  "name": "func_SetCloseEnabled",
+  "original_purpose": "Allow/forbid closing the game window.",
+  "dreamcast_replacement": "Controls whether the virtual computer's 'Close OneShot' action is available.",
+  "failure_behaviour": "None.",
+  "status": "implemented",
+  "call_sites": [
+   {
+    "where": "Map60 event 1 'pedestal' page 1",
+    "arg1": 1,
+    "return_checked": false
+   },
+   {
+    "where": "Map60 event 6 'door close' page 1",
+    "arg1": 0,
+    "return_checked": false
+   },
+   {
+    "where": "Map61 event 1 'EV0001' page 1",
+    "arg1": 1,
+    "return_checked": false
+   }
+  ],
+  "call_site_count": 3,
+  "tests": [
+   "(manual) ending sequence, Maps 60/61"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ },
+ {
+  "func": "_init",
+  "name": "_init handshake",
+  "call_sites": [
+   {
+    "where": "Map1 event 3 'init' page 1"
+   }
+  ],
+  "original_purpose": "Start-up handshake: switches 1-20 and vars 1-4 hold a signature; var1 must change from 8008135.",
+  "dreamcast_replacement": "Clears the signature (switches 1-20, vars 1-4), sets var7 ENDING from persistent meta.",
+  "failure_behaviour": "If not handled, Map 1 shows the original 'error' picture (game unplayable) - so it is always handled.",
+  "status": "implemented (inferred)",
+  "tests": [
+   "tests/scripts/opening.txt"
+  ],
+  "verified_from_data": true,
+  "original_native_code_inspected": false
+ }
+]

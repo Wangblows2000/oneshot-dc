@@ -1,0 +1,74 @@
+# PANORAMAS: map-sized panoramas larger than a PVR texture (Map 21 'mine' 1120x800,
+# Map 31 'maize' 1408x1280) are streamed through a 512x512 window; ordinary ones
+# (Map 2 sky, Map 35 city) unchanged.  No texture may fail to load.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 warp 21 53 20 2
+270 advance 1500
+280 shot pano_21_a
+284 DOWN
+374 -
+384 RIGHT
+504 -
+514 UP
+604 -
+614 LEFT
+734 -
+744 advance 1500
+746 shot pano_21_b
+748 print
+748 print-screen
+750 print-gfx
+752 warp 31 25 39 2
+812 advance 1500
+822 shot pano_31_a
+826 DOWN
+916 -
+926 RIGHT
+1046 -
+1056 UP
+1146 -
+1156 LEFT
+1276 -
+1286 advance 1500
+1288 shot pano_31_b
+1290 print
+1290 print-screen
+1292 print-gfx
+1294 warp 35 102 45 2
+1354 advance 1500
+1364 shot pano_35_a
+1368 DOWN
+1458 -
+1468 RIGHT
+1588 -
+1598 UP
+1688 -
+1698 LEFT
+1818 -
+1828 advance 1500
+1830 shot pano_35_b
+1832 print
+1832 print-screen
+1834 print-gfx
+1836 warp 2 15 16 2
+1896 advance 1500
+1906 shot pano_02_a
+1910 DOWN
+2000 -
+2010 RIGHT
+2130 -
+2140 UP
+2230 -
+2240 LEFT
+2360 -
+2370 advance 1500
+2372 shot pano_02_b
+2374 print
+2374 print-screen
+2376 print-gfx
+2378 expect-tex-failures 0

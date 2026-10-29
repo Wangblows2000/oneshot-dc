@@ -1,0 +1,20 @@
+# Battle animations (emote balloons, Battle/anim1 via anim.dat): the glen gatekeeper's
+# first conversation (Map 37 event 11 page 1) shows animation 5 over the gatekeeper.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 expect-banim-count 5
+220 warp 37 34 96 1
+260 advance 2000
+270 UP
+274 -
+280 A
+282 -
+290 advance-until-banim 3000
+300 shot banim_01_balloon
+302 expect-page 11 1
+310 advance 3000
+320 expect-sw 113 1

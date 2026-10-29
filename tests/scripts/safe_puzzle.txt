@@ -1,0 +1,51 @@
+# ACCEPTANCE: the original "document outside the game" safe puzzle (Map 20, event 3),
+# played through the real converted data and the real interpreter.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+# Hello? sequence finished; go to the safe on the cliffs map
+210 warp 20 76 23 1
+260 print
+270 expect-map 20
+280 expect-file /Documents/document.txt 0
+# --- 1. talk to the safe: dialogue + modal dialog + clue document is created
+300 A
+302 -
+304 advance 4000
+310 expect-sw 91 1
+311 expect-file /Documents/document.txt 1
+# the number prompt was answered by blind A presses (000000): must NOT open the safe
+312 expect-sw 92 0
+313 expect-var 100 0
+314 print
+# --- 2. leave the game for the virtual computer and read the document
+320 START
+322 -
+340 shot safe_01_desktop
+350 A
+352 -
+380 shot safe_02_documents
+390 A
+392 -
+420 shot safe_03_document_open
+421 expect-opened /Documents/document.txt
+430 B
+432 -
+436 B
+438 -
+440 START
+442 -
+470 print
+# --- 3. back at the safe: enter the code that was read from the document
+480 A
+482 -
+600 shot safe_04_prompt
+610 type-number @/Documents/document.txt
+700 shot safe_05_entered
+710 advance 4000
+720 expect-sw 92 1
+721 print
+730 shot safe_06_after

@@ -1,0 +1,95 @@
+# Real emulator run: manual save to the emulated VMU, then the Map 3 basement stairs
+# (reached through the Debug Menu's room warp).  Flycast keys: A=x B=c START=Return L=f R=v
+6 key x
+15 key x
+37 key x
+39 key x
+41 key x
+43 key x
+45 key x
+52.0 key Return
+54.0 key Down
+54.5 key Down
+55.0 key Down
+55.5 key x
+57.0 shot fs01_memory_card
+57.5 key x
+60.0 shot fs02_saved
+60.5 key x
+61.5 key x
+64.0 shot fs03_saved_again
+64.5 key x
+65.5 key c
+66.5 key Up
+67.1 key Up
+67.7 key Down
+68.3 key Down
+68.9 keys f+v 1.0
+70.9 key Down
+71.4 key Down
+71.9 key Down
+72.4 key Down
+72.9 key x
+74.4 key Down
+74.9 key Down
+75.4 shot fs04_room_list
+75.9 key x
+78.9 shot fs05_stairs_top
+79.4 key Right 0.08
+79.7 shot fs06_stairs_00
+80.0 shot fs06_stairs_01
+80.3 key Right 0.08
+80.4 shot fs06_stairs_02
+80.7 shot fs06_stairs_03
+81.1 shot fs06_stairs_04
+81.2 key Right 0.08
+81.4 shot fs06_stairs_05
+81.8 shot fs06_stairs_06
+82.1 key Right 0.08
+82.1 shot fs06_stairs_07
+82.5 shot fs06_stairs_08
+82.8 shot fs06_stairs_09
+83.0 key Right 0.08
+83.2 shot fs06_stairs_10
+83.5 shot fs06_stairs_11
+83.9 key Right 0.08
+83.9 shot fs06_stairs_12
+84.2 shot fs06_stairs_13
+84.6 shot fs06_stairs_14
+84.8 key Right 0.08
+84.9 shot fs06_stairs_15
+85.3 shot fs06_stairs_16
+85.6 shot fs06_stairs_17
+85.7 key Right 0.08
+86.0 shot fs06_stairs_18
+86.3 shot fs06_stairs_19
+86.6 key Right 0.08
+86.7 shot fs06_stairs_20
+87.0 shot fs06_stairs_21
+87.4 shot fs06_stairs_22
+87.7 shot fs06_stairs_23
+88.1 shot fs06_stairs_24
+88.4 shot fs06_stairs_25
+88.8 shot fs06_stairs_26
+89.1 shot fs06_stairs_27
+89.5 shot fs06_stairs_28
+89.8 shot fs06_stairs_29
+90.4 key Right 0.08
+90.6 shot fs07_basement_00
+91.1 shot fs07_basement_01
+91.3 key Right 0.08
+91.6 shot fs07_basement_02
+92.1 shot fs07_basement_03
+92.2 key Right 0.08
+92.6 shot fs07_basement_04
+93.1 key Right 0.08
+93.1 shot fs07_basement_05
+93.6 shot fs07_basement_06
+94.0 key Right 0.08
+94.1 shot fs07_basement_07
+94.6 shot fs07_basement_08
+94.9 key Right 0.08
+95.1 shot fs07_basement_09
+95.6 shot fs07_basement_10
+96.1 shot fs07_basement_11
+97.4 end

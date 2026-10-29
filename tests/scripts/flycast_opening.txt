@@ -1,0 +1,24 @@
+# Real emulator run: title -> start -> photosensitivity question -> wake up -> Hello? -> walk -> computer desktop
+6 shot e01_title
+7 key x
+14 shot e02_question
+15 key x
+24 shot e03_wake
+36 shot e04_hello
+37 key x
+39 key x
+41 key x
+43 key x
+45 key x
+50 shot e05_room
+51 key Right 0.6
+52 key Up 0.3
+53 shot e06_walk
+55 key Return
+57 shot e07_desktop
+58 key x
+60 shot e08_documents
+61 key c
+62 key Return
+64 shot e09_back
+65 end

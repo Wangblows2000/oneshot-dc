@@ -1,0 +1,17 @@
+# Run AFTER manual_save.txt with the same --store: a new power-on (fresh process)
+# must find the manual save on the "VMU" and the game's INIT/LOAD must restore it.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 A
+212 -
+220 START
+222 -
+230 advance 3000
+300 print
+301 expect-map 5
+302 expect-var 50 777
+303 expect-item 3 1

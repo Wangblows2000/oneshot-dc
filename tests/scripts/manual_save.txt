@@ -1,0 +1,84 @@
+# MANUAL SAVE from the virtual computer's Memory Card window (A = save now).
+# The window runs the game's own SAVE GAME event (CE26: location -> vars 21-23,
+# items/notes streamed through the bridge, two-slot VMU commit).  Then: full card,
+# no card (both must say NOT saved and keep the earlier save), and finally a
+# relaunch must load the manual save back (map, position, variables, items).
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 warp 5 14 12 2
+240 advance 2000
+250 setvar 50 777
+251 item 3 1
+252 print
+# open the computer: Documents, Desktop, Pictures, [Memory Card]
+260 START
+262 -
+290 DOWN
+292 -
+296 DOWN
+298 -
+302 DOWN
+304 -
+310 A
+312 -
+330 expect-window Memory_Card
+331 shot ms_01_card_window
+340 A
+342 -
+370 expect-commit ok
+371 print-save-size
+372 shot ms_02_saved
+380 A
+382 -
+# card full: refused, explained, earlier save untouched
+390 store-mode full
+400 A
+402 -
+430 expect-commit session
+431 shot ms_03_card_full
+440 A
+442 -
+# card pulled out
+460 store-mode none
+470 A
+472 -
+500 expect-commit session
+501 shot ms_04_no_card
+510 A
+512 -
+530 store-mode ok
+# change the live game so the load has something to restore
+540 setvar 50 1
+541 item 3 0
+# close OneShot from the computer: Memory Card -> Settings -> Back -> [Close OneShot]
+550 B
+552 -
+560 DOWN
+562 -
+566 DOWN
+568 -
+572 DOWN
+574 -
+580 A
+582 -
+600 A
+602 -
+660 expect-trans relaunch
+670 A
+672 -
+800 advance 400
+810 A
+812 -
+820 START
+822 -
+830 advance 3000
+900 print
+901 expect-map 5
+# CE27 LOAD GAME recalls vars 21-23 and then plays the game's own wake-up step
+902 expect-var 50 777
+903 expect-item 3 1
+904 shot ms_05_loaded

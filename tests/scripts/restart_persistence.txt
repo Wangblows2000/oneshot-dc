@@ -1,0 +1,57 @@
+# ACCEPTANCE: save via the game's own SAVE GAME event, desktop change, simulated
+# close/relaunch from the virtual computer, reload via the game's LOAD path.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 print
+# wallpaper puzzle hook (as Map 33 calls it): virtual desktop change
+220 bridge 4 1
+221 expect-wallpaper clue
+# walk one step so the saved position differs from the start
+230 RIGHT
+238 -
+260 print
+270 common 26
+272 advance 600
+280 setvar 50 0
+# close OneShot from the virtual computer
+300 START
+302 -
+330 DOWN
+332 -
+336 DOWN
+338 -
+342 DOWN
+344 -
+348 DOWN
+350 -
+354 DOWN
+356 -
+360 DOWN
+362 -
+370 shot rs_01_close_icon
+380 A
+382 -
+400 shot rs_02_confirm
+410 A
+412 -
+470 shot rs_03_closed
+471 expect-trans relaunch
+480 A
+482 -
+# relaunched: INIT -> LOAD GAME (func_Load returns 2: name unknown) -> name entry
+600 shot rs_04_after_relaunch
+610 advance 400
+700 shot rs_05_osk
+710 A
+712 -
+720 START
+722 -
+730 advance 3000
+800 print
+801 expect-map 2
+802 expect-wallpaper clue
+803 shot rs_06_restored

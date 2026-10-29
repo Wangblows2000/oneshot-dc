@@ -1,0 +1,78 @@
+# MOVEMENT regression (map 3 basement stairs + RPG Maker 2003 diagonal/jump move commands)
+# 1. Map 3's stairs are 30 touch events whose move routes step the player
+#    diagonally (codes 5/7).  Walk down into the basement (map 6) and back up.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 warp 3 9 8 2
+250 advance 1000
+260 expect-pos 9 8
+270 RIGHT
+290 -
+310 RIGHT
+330 -
+350 RIGHT
+370 -
+390 RIGHT
+410 -
+430 RIGHT
+450 -
+470 RIGHT
+490 -
+510 RIGHT
+530 -
+550 RIGHT
+570 -
+590 RIGHT
+610 -
+630 advance 600
+640 expect-map 6
+641 print
+642 shot mv_01_basement
+650 LEFT
+670 -
+690 LEFT
+710 -
+730 LEFT
+750 -
+770 LEFT
+790 -
+810 LEFT
+830 -
+850 advance 600
+860 expect-map 3
+870 LEFT
+890 -
+910 LEFT
+930 -
+950 LEFT
+970 -
+990 LEFT
+1010 -
+1030 LEFT
+1050 -
+1070 LEFT
+1090 -
+1110 LEFT
+1130 -
+1150 LEFT
+1170 -
+1190 print
+1191 expect-map 5
+# climbed back up and through the top door (Map 3 event 7) into the living room
+# 2. jump (codes 24..25): in place, then one tile right (24,1,25); through on so walls do not matter
+1200 warp 3 14 13 2
+1240 advance 600
+1250 route-player 36,24,25,37 0
+1254 expect-jumping 1
+1280 expect-jumping 0
+1281 expect-pos 14 13
+1290 route-player 36,24,1,25,37 0
+1320 expect-pos 15 13
+1321 expect-jumping 0
+# 3. diagonal with walls: up-right then down-left returns to the start
+1330 route-player 36,4,6,37 0
+1380 expect-pos 15 13

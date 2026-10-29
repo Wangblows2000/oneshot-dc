@@ -1,0 +1,72 @@
+# REGRESSION (item handling): pick up the TV remote under the bedroom carpet,
+# use the window WITHOUT holding it (default text), select the remote in the
+# Items menu (switch 22 -> item daemon -> sw 119 -> autorun CE20 "use ITEM"
+# -> var9 = 2), then use the window again: the coloured password digits appear.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+# stand below the carpet bump and face it
+210 warp 2 22 19
+240 UP
+246 -
+260 A
+262 -
+270 advance 3000
+280 expect-page 10 1
+281 expect-var 9 0
+# window without the item selected -> default description
+290 warp 2 24 16
+320 UP
+326 -
+340 A
+342 -
+350 advance 3000
+360 expect-page 5 1
+# open the menu: Items -> television remote
+370 B
+372 -
+380 A
+382 -
+390 shot remote_01_items_menu
+400 A
+402 -
+439 expect-ce 20 1
+440 expect-var 10 2
+441 expect-var 9 2
+442 expect-sw 119 0
+443 shot remote_02_holding
+# use the window while holding the remote -> page 2 shows the password digits (vars 13-16)
+450 A
+452 -
+470 shot remote_03_window_faint_light
+480 A
+482 -
+500 A
+502 -
+545 shot remote_04_window_digits
+546 advance 3000
+548 expect-page 5 2
+550 print
+# selecting the held item again deactivates it (CE20 first branch: var9 == var10 -> 0)
+560 B
+562 -
+570 A
+572 -
+580 A
+582 -
+610 expect-var 9 0
+611 expect-sw 119 0
+# hold it again, then Y (OneShot's Shift key, via the data's key-input daemon CE36 -> CE25) puts it away
+620 B
+622 -
+630 A
+632 -
+640 A
+642 -
+670 expect-var 9 2
+680 Y
+684 -
+720 expect-var 9 0

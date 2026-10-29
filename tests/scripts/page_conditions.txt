@@ -1,0 +1,16 @@
+# Event page condition "actor in party" (flag 0x10): Map 34 event 53 (Calamus) page 4
+# applies only once Alula (actor 3) is in the party.  Before the fix it always applied.
+0 -
+30 A
+32 -
+160 A
+162 -
+200 advance 3000
+210 party 3 0
+212 warp 34 60 50 2
+260 advance 2000
+270 expect-active-page 53 1
+280 party 3 1
+290 expect-active-page 53 4
+300 party 3 0
+310 expect-active-page 53 1

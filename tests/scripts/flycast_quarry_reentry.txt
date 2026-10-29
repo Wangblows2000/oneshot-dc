@@ -1,0 +1,97 @@
+# Frame-rate around a quarry exit/re-entry (diagnostics on): before vs after the panorama fix
+6 key x
+15 key x
+37 key x
+39 key x
+41 key x
+43 key x
+45 key x
+52.0 key Return
+54.0 key Down
+54.5 key Down
+55.0 key Down
+55.5 key Down
+56.0 key x
+57.2 key s
+58.0 key c
+59.0 key Up
+59.6 key Up
+60.2 key Down
+60.8 key Down
+61.4 keys f+v 1.0
+63.4 key Down
+63.9 key Down
+64.4 key Down
+64.9 key x
+66.4 key Down
+66.8 key Down
+67.1 key Down
+67.4 key Down
+67.8 key Down
+68.1 key Down
+68.5 key Down
+68.8 key Down
+69.2 key Down
+69.5 key Down
+69.9 key Down
+70.2 key Down
+70.6 key Down
+70.9 key Down
+71.3 key Down
+71.6 key Down
+72.0 key Down
+72.3 key Down
+72.7 key Down
+73.0 key Down
+73.4 key x
+77.4 key Down 3.0
+80.6 key Right 6.0
+86.8 shot fr00
+87.3 shot fr01
+87.8 shot fr02
+88.3 shot fr03
+88.8 shot fr04
+88.8 key Left 1.0
+89.3 shot fr05
+89.8 shot fr06
+90.0 key Left 1.0
+90.3 shot fr07
+90.8 shot fr08
+91.2 key Left 1.0
+91.3 shot fr09
+91.8 shot fr10
+92.3 shot fr11
+92.4 key Left 1.0
+92.8 shot fr12
+93.3 shot fr13
+93.6 key Left 1.0
+93.8 shot fr14
+94.3 shot fr15
+94.8 shot fr16
+94.8 key Left 1.0
+95.3 shot fr17
+95.8 shot fr18
+96.0 key Left 1.0
+96.3 shot fr19
+96.8 shot fr20
+97.2 key Left 1.0
+97.3 shot fr21
+97.8 shot fr22
+98.3 shot fr23
+98.8 shot fr24
+99.3 shot fr25
+99.8 shot fr26
+100.3 shot fr27
+100.8 shot fr28
+101.3 shot fr29
+101.8 shot fr30
+102.3 shot fr31
+102.8 shot fr32
+103.3 shot fr33
+103.8 shot fr34
+104.3 shot fr35
+104.8 shot fr36
+105.3 shot fr37
+105.8 shot fr38
+106.3 shot fr39
+107.8 end
