@@ -9,7 +9,7 @@ boxes, closing the game).
 > Status: **playable vertical slice** — boots on an emulated Dreamcast (Flycast),
 > renders the real maps/sprites/pictures, runs the original event scripts, and the
 > original "document outside the game" safe puzzle is solvable end-to-end through
-> the virtual computer. Not yet tested on real hardware. See
+> the virtual computer. Tested on real hardware. See
 > [docs/PROGRESS.md](docs/PROGRESS.md) for exactly what works and what does not.
 
 ## What is in this repository
